@@ -1,0 +1,22 @@
+name: lista_tarefas
+version: 1.0.0+1
+description: A new Flutter application.
+environment: 
+  sdk: '>=2.1.0 <3.0.0'
+dependencies: 
+  bloc: ^2.0.0
+  flutter_bloc: ^2.0.0
+  dio: 2.1.13
+  rxdart: ^0.22.6
+  bloc_pattern: ^2.5.0
+  flutter: 
+    sdk: flutter
+dev_dependencies: 
+  mockito: ^4.1.1
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets:
+    - images/
+

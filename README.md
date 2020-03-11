@@ -1,4 +1,4 @@
-<p align="center">TaskList</p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/45599504/76455577-98615480-63b4-11ea-8bfb-14faf7eefd02.png" width=250> </p>
 <hr>
 
 <p align="center">📓 <strong>Aplicativo de lista de tarefas 1.0 </strong></p>

@@ -1,20 +1,8 @@
-import 'package:bloc/bloc.dart';
+import 'package:bloc_pattern/bloc_pattern.dart';
 
-enum AppEvent { increment, decrement }
-
-class AppBloc extends Bloc<AppEvent, int> {
+class AppBloc extends BlocBase {
   @override
-  int get initialState => 0;
-
-  @override
-  Stream<int> mapEventToState(AppEvent event) async* {
-    switch (event) {
-      case AppEvent.decrement:
-        yield state - 1;
-        break;
-      case AppEvent.increment:
-        yield state + 1;
-        break;
-    }
+  void dispose() {
+    super.dispose();
   }
 }

@@ -31,3 +31,16 @@ O TaskList é um projeto que visa facilitar a organização diárias ou semanais
 <p>
 O usuário aperta em "Add List" na página principal e será redirecionado para a página de criação de uma nova lista de tarefas, após isso, basta criar um nome para a lista e ir adicionando as suas tarefas!
 Para marcar uma tarefa concluída, basta apertar em cima do nome da tarefa e o aplicativo irá deixá-la em vermelho e irá riscar ela da lista. Fácil né!?</p>
+
+## 🤔 Como contribuir
+
+* Faça um fork desse repositório;
+* Cria uma branch com a sua feature: <code>git checkout -b minha-feature;</code>
+* Faça commit das suas alterações: <code>git commit -m 'feat: Minha nova feature';</code>
+* Faça push para a sua branch: <code>git push origin minha-feature</code>.
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
+<hr>
+
+Feito com ♥ by Israel Vieira 👋 [Entre em contato pelo Linkedin!](https://www.linkedin.com/in/israelvieiraa/)

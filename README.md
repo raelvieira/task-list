@@ -1,7 +1,7 @@
 <p align="center"> <img src="https://user-images.githubusercontent.com/45599504/76455577-98615480-63b4-11ea-8bfb-14faf7eefd02.png" width=250> </p>
 <hr>
 
-<p align="center">📓 <strong>Aplicativo de lista de tarefas (ALFA) </strong></p>
+<p align="center">📓 <strong>Aplicativo de lista de tarefas 0.1 (ALFA) </strong></p>
 
 <p align="center">
 <kbd>

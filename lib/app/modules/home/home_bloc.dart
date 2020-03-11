@@ -1,20 +1,27 @@
-import 'package:bloc/bloc.dart';
+import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:lista_tarefas/app/models/Tasks.dart';
+import 'package:lista_tarefas/app/modules/home/home_repository.dart';
+import 'package:rxdart/rxdart.dart';
 
-enum HomeEvent { increment, decrement }
+class HomeBloc extends BlocBase {
+  final HomeRepository _repository;
+  BehaviorSubject<List<Tasks>> _tasksController = BehaviorSubject<List<Tasks>>();
 
-class HomeBloc extends Bloc<HomeEvent, int> {
-  @override
-  int get initialState => 0;
+  HomeBloc(this._repository);
 
-  @override
-  Stream<int> mapEventToState(HomeEvent event) async* {
-    switch (event) {
-      case HomeEvent.decrement:
-        yield state - 1;
-        break;
-      case HomeEvent.increment:
-        yield state + 1;
-        break;
+  Stream<List<Tasks>> get outTasks => _tasksController.stream;
+
+  void getTasks() async {
+    try {
+      var resposta = await _repository.getTasks();
+      _tasksController.add(resposta);
+    }catch(e) {
+      _tasksController.addError(e);
     }
+  }
+
+  @override
+  void dispose() {
+    _tasksController.close();
   }
 }

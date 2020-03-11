@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lista_tarefas/app/models/Tasks.dart';
 import 'package:lista_tarefas/app/modules/home/components/card_list.dart';
 import 'package:lista_tarefas/app/modules/home/create_tasks/create_tasks_module.dart';
+import 'package:lista_tarefas/app/modules/home/home_bloc.dart';
+import 'package:lista_tarefas/app/modules/home/home_module.dart';
 
 import 'list_task/list_task_module.dart';
 
@@ -11,8 +14,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  HomeBloc _homeBloc = HomeModule.to.getBloc<HomeBloc>();
+
   @override
   Widget build(BuildContext context) {
+    _homeBloc.getTasks();
+
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset("images/logo.png"),
@@ -56,9 +63,8 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-            StreamBuilder<List>(
-              stream: null,
-              initialData: [1,2,3,4,5,6,7,8],
+            StreamBuilder<List<Tasks>>(
+              stream: _homeBloc.outTasks,
               builder: (context, snapshot) {
                 if(!snapshot.hasData) {
                   return Center(heightFactor: 5, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor)),);
